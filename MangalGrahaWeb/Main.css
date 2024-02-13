@@ -1,0 +1,513 @@
+body {
+  margin: 0;
+   /* Space for the fixed footer */
+  position: relative;
+  min-height: 100vh; /* Ensure the footer doesn't overlap content */
+}
+
+.go-to-navbar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.go-to-navbar-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f43c3c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.go-to-navbar-btn:hover {
+  background-color: #ff0000;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+      width: 240px; 
+      height: 80px;
+      margin-right: 10px;
+    }
+
+  .logo span {
+    color: red;
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .menu li {
+    margin-right: 20px;
+  }
+
+  .menu li a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: red;
+  }
+
+  /* Dropdown styles */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 10px;
+    }
+
+    .logo img {
+      width: 80px;
+      height: 32px;
+      margin-right: 8px;
+    }
+
+    .logo span {
+      font-size: 18px;
+    }
+
+    .menu {
+      display: none;
+    }
+
+    .menu.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      background-color: #fff;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .menu.active li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    .menu.active li:last-child {
+      margin-bottom: 0;
+    }
+  }
+  /* Style for the yellow banner */
+.yellow-banner {
+    background-color: yellow;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Style for the banner text */
+  .banner-text {
+    font-size: 40px;
+    color: red;
+    font-weight: 800;
+  }
+  
+  /* Style for the container */
+.content {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Style for the image with text */
+  .image-with-text {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Allow the content to take remaining space */
+  }
+  
+  /* Style for the larger text in span */
+  .larger-text {
+    font-size: 2.5vw; /* Set font size using viewport width (vw) */
+    font-weight: 700;
+    color: red;
+  }
+  
+  /* Style for the text box */
+  .text-box {
+    background-color: white;
+    font-size: 1.3vw;
+    padding: 4vw; /* Adjust padding using viewport width (vw) */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow effect */
+    border-radius: 2vw; /* Rounds the corners using viewport width (vw) */
+    margin-left: 4vw; /* Adjust margin using viewport width (vw) */
+  }
+  
+  /* Animation for the image */
+  .animated-image {
+    width: 30vw; /* Set the desired width using viewport width (vw) */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover effect for the image */
+  .animated-image:hover {
+    transform: scale(1.1); /* Scale up the image on hover */
+  }
+  
+  /* Style for the gallery heading */
+.gallery-heading {
+    color: red;
+    font-weight: 700;
+    font-size: 3em; /* Adjust font size as needed */
+    text-align: center;
+    margin-bottom: 20px; /* Adjust spacing from the image grid */
+    position: relative;
+  }
+  
+  /* Animation for the red line */
+  .gallery-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Adjust the distance of the line from text */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  /* Animation effect on hover */
+  .gallery-heading:hover::after {
+    width: 100%;
+  }
+  
+  /* Style for the image grid */
+  
+ 
+  /* Style for the images within the grid */
+
+  /* Add these styles to your existing CSS file or create a new one */
+
+/* Style for card container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  /* Style for individual card */
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 14px 18px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  /* Style for card header */
+  .card-header h3{
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    font-size: x-large;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+  }
+  
+  /* Style for card body */
+  .card-body {
+    padding-top: 10px;
+    line-height: 1.6;
+  }
+
+  .card-body p{
+    font-size: 1.2vw;
+  }
+  
+  /* Style for the displayed text */
+  .displayed-text {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+  }
+
+  .form-box {
+    margin: 20px; /* Adjust margin as needed */
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    background-color: #ededed;
+  }
+
+  .form-label {
+    color: red;
+    font-weight: 700;
+  }
+
+  .btn-primary {
+    background-color: red !important; /* Overriding Bootstrap default styles */
+    color: white !important;
+    font-weight: 700;
+    border: none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+
+  /* Styling for the yellow banner with class name "sep" */
+.sep {
+    background-color: rgb(255, 0, 0);
+    padding: 10px;
+    height: 50px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+
+  }
+
+  .card-header {
+    background-color: #f44336;
+    color: white;
+    padding: 12px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .card-body {
+    padding: 20px;
+    text-align: left;
+  }
+
+  /* Adjust font size or other styles as needed */
+  .card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .column {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    min-width: 300px; /* Set a minimum width for the columns */
+  }
+  
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .accommodation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     /* Adjust the height of the container */
+  }
+  
+  .gallery-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px; /* Margin from the text container */
+  }
+  
+  .text-section {
+    flex: 1;
+    padding: 20px; /* Padding inside the text container */
+  }
+  
+  .info-box {
+    background-color: #fff;
+    padding: 4vw; /* Adjust padding based on screen size */
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info-box p {
+    font-size: 1.2vw; /* Adjust font size based on screen size */
+    line-height: 1.6;
+  }
+  
+  .gallery-wrapper {
+    border-radius: 15px; /* Rounded corners for the gallery */
+    overflow: hidden; /* Hide overflow content */
+  }
+  
+  .carousel-inner {
+    border-radius: 15px; /* Rounded corners for the images */
+  }
+  
+  .carousel-item img {
+    border-radius: 15px; /* Rounded corners for individual images */
+  }
+  
+  /* Adjust as needed */
+  @media screen and (max-width: 768px) {
+    .info-box p {
+      font-size: 3vw; /* Adjust font size for smaller screens */
+    }
+  }
+  
+ 
+  
+  .trustee-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    width: 250px; /* Adjust card width */
+    margin: 10px; /* Adjust margin between cards */
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%; /* Image width to fill the card */
+    height: auto;
+    border-radius: 8px; /* Rounded corners for the image */
+  }
+  
+  .info {
+    margin-top: 10px;
+  }
+  
+  .name{
+    font-size: larger;
+    font-weight: 600;
+    color: red;
+  }
+  
+  .post {
+    color: red;
+  }
+  
+  .location {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .text-section {
+    flex: 1;
+  }
+  
+  .info-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .map-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Set height for the map */
+    margin-left: 20px; /* Adjust margin as needed */
+  }
+  
+  .map-section iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px; /* Make the map square and round the corners */
+  }
+  
+  footer {
+    
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #484848;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+
+  p {
+    margin-bottom: 5px;
+  }
+  
+  
